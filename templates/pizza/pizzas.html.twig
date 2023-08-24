@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block title %}Soprano's Pizza{% endblock %}
+{% block body %}
+    <div class="container-fluid">
+
+        <div class="container">
+
+            <div class="row text-center ">
+                {% for pizza in category.pizzas %}
+                    <div class="col-sm-12 col-md-4 col-lg-4 ">
+                        <div class="card border-2px border-danger mt-5 ">
+                            <img class="img img-fluid" style="height: 300px" src="../../img/{{ pizza.img }}" alt="">
+                            <div class="card-body">
+                                <div class="card-text">
+                                    <h3>{{ pizza.name }}</h3> <br>
+{#                                    <input type="number" class="border-3px border-danger" max="10" min="0">#}
+{#                                    <select class="border-3px border-danger" name="size" id="">#}
+{#                                        <option value="0">Small</option>#}
+{#                                        <option value="1">medium</option>#}
+{#                                        <option value="2">large</option>#}
+{#                                        <option value="3">calzone</option>#}
+{#                                    </select>#}
+                                    <br>
+                                    <button type="button" class="btn btn-danger mt-4">
+                                        <a href="{{ path('bestellen', {id: pizza.id}) }}" class="text-light" style="text-decoration: none">Bestel</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

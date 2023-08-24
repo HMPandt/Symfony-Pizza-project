@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block title %}Soprano's Pizza{% endblock %}
+{% block body %}
+
+        <div class="container">
+            <div class="row ">
+                <div class="container">
+                    <table class="table border border-dark table-danger">
+
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Adress</th>
+                            <th>Nummer</th>
+                            <th>Order</th>
+                            <th>Size</th>
+
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for orders in order %}
+                                <tr>
+                                    <td>{{ orders.name }}</td>
+                                    <td>{{ orders.adress }}</td>
+                                    <td>{{ orders.number }}</td>
+                                    <td>{{ orders.pizza.name }}</td>
+                                    <td>{{ orders.size }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock %}

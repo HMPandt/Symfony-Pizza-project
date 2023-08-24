@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block title %}Soprano's Pizza{% endblock %}
+{% block body %}
+    <div class="container-fluid mb-5">
+
+        <div class="container">
+
+            <div class="row text-center ">
+                {% for categories in category %}
+                    <div class="col-sm-12 col-md-4 col-lg-4 ">
+                        <div class="card border-4px border-danger mt-5 ">
+                            <img class="img img-fluid" style="height: 300px" src="../../img/{{ categories.img }}" alt="">
+                            <div class="card-body">
+                                <div class="card-text">
+                                    <h3>{{ categories.name }}</h3>
+                                    <button type="button" class="btn btn-danger">
+                                        <a href="{{ path('pizzas', {id: categories.id}) }}" class="text-light" style="text-decoration: none"> Klik hier</a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row ">
+                <div class="col-12">
+                    <div class="card border-4px border-danger mt-5">
+                        <div class="card-body">
+                            <img src="" alt="">
+                            <div class="card-text">
+                                <h1>
+                                    Welcome
+                                </h1>
+                                <p>
+                                    De enige echte Italianse pizza's in de Nederlands, direct van Tuscany voor uw plezier!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
